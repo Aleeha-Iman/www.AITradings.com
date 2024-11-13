@@ -1,0 +1,341 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body, html {
+    height: 100%;
+    font-family: 'Times New Roman';
+    background-color: #f7f7f7;
+}
+
+/* Transparent Navbar */
+.navbar {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    padding: 15px 30px;
+    background-color: rgba(0, 0, 0, 0.5); /* Semi-transparent background */
+    color: white;
+    z-index: 100;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    box-shadow: 0 2px 10px rgba(0, 0, 0, 0.2); /* Subtle shadow for visibility */
+    transition: background-color 0.3s ease; /* Smooth transition for background on scroll */
+}
+
+.navbar:hover {
+    background-color: rgba(0, 0, 0, 0.7); /* Slightly darker when hovered */
+}
+
+/* Navbar Links */
+nav {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.nav-link {
+    text-decoration: none;
+    color: white;
+    font-size: 1.6rem;
+    margin: 0 20px;
+    text-transform: uppercase;
+    position: relative;
+    transition: color 0.3s ease, transform 0.3s ease;
+}
+
+.nav-link::after {
+    content: "";
+    position: absolute;
+    bottom: 0;
+    left: 50%;
+    width: 100%;
+    height: 2px;
+    background-color: white;
+    transform: translateX(-50%) scaleX(0);
+    transition: transform 0.3s ease;
+}
+
+.nav-link:hover {
+    color: #b5dff3; /* Color change on hover */
+    transform: translateY(-5px); /* Slight lifting effect */
+}
+
+.nav-link:hover::after {
+    transform: translateX(-50%) scaleX(1); /* Bottom underline animation */
+}
+.about-ceo {
+    text-align: center;
+    max-width: 1200px;
+    padding: 50px;
+  }
+  
+  .heading {
+    font-size: 60px;
+    font-weight: bold;
+    text-transform: uppercase;
+    color: #333;
+    text-shadow: 3px 3px 6px rgba(0, 0, 0, 0.2), -3px -3px 6px rgba(255, 255, 255, 0.4);
+    margin-bottom: 40px;
+    margin-left: 14%;
+ 
+  }
+  
+  .ceo-container {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    flex-wrap: wrap; /* Make it responsive */
+    margin-left: 10%;
+  }
+  
+  .ceo-description {
+    flex: 1;
+    padding-right: 20px;
+    text-align: left;
+    font-size: 19px;
+    line-height: 1.6;
+    color: #555;
+  }
+  
+  .ceo-description p {
+    margin-bottom: 20px;
+  }
+  
+  .ceo-image {
+    flex: 1;
+    display: flex;
+    justify-content: center;
+  }
+  
+  .ceo-image img {
+    width: 400px;  /* Set width */
+    height: 400px; /* Set height to match width (square) */
+    border-radius: 50%; /* Makes the image round */
+    object-fit: cover; /* Ensures the image is properly contained within the circle */
+    box-shadow: 0 8px 16px rgba(0, 0, 0, 0.2);
+  }
+  
+  @media (max-width: 768px) {
+    .ceo-container {
+      flex-direction: column;
+      align-items: center;
+    }
+  
+    .ceo-description {
+      text-align: center;
+      padding-right: 0;
+      margin-bottom: 20px;
+    }
+  
+    .ceo-image {
+      margin-top: 20px;
+    }
+  }
+  /* Container for everything */
+.container {
+    width: 100%;
+    max-width: 1200px;
+    padding: 20px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+    margin-left: 7%;
+}
+
+/* Main heading style */
+.main-heading {
+    font-size: 2rem;
+    margin-bottom: 30px;
+    color: #333;
+    text-transform: uppercase;
+    letter-spacing: 1px;
+    margin-left: 8%;
+}
+
+/* Box container styles */
+.boxes {
+    display: flex;
+    justify-content: center;
+    gap: 20px;
+    flex-wrap: wrap;
+    margin-top: 30px;
+}
+
+.box {
+    width: 22%;
+    min-width: 250px;
+    background-color: #dfe8ee;
+    padding: 20px;
+    border-radius: 10px;
+    box-shadow: 0 2px 6px rgba(0, 0, 0, 0.1);
+}
+
+.box h4 {
+    font-size: 1.7rem;
+    margin-bottom: 15px;
+    color: #0d1725;
+}
+
+.box p {
+    font-size: 1.2rem;
+    line-height: 1.6;
+    color: #07314d;
+    font-weight: bold;
+}
+
+/* Style for the "OUR LIGHTING SOLUTION" heading */
+.lighting-heading {
+    font-size: 2rem;
+    margin-top: 40px;
+    margin-bottom: 30px;
+    color: #333;
+    text-transform: uppercase;
+    letter-spacing: 1px;
+    margin-left: 30%;
+}
+
+/* Gallery Container */
+.image-gallery {
+    display: flex;
+    justify-content: center;
+    gap: 20px;
+    flex-wrap: wrap;
+    margin-top: 30px;
+}
+
+/* Individual Image Item */
+.image-item {
+    position: relative;
+    width: 22%;
+    min-width: 250px;
+    height: 300px; /* Adjust the height as needed */
+    overflow: hidden;
+    border-radius: 10px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    font-weight: bold;
+}
+
+.image-item img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover; /* Ensures images fill the container */
+    transition: transform 0.3s ease-in-out;
+}
+
+.image-item:hover img {
+    transform: scale(1.1); /* Image zoom effect on hover */
+}
+
+/* Overlay Text on Image */
+.image-overlay {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    font-size: 1.5rem;
+    font-weight: bold;
+    color: white;
+    text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.5);
+    font-weight: bold;
+}
+
+/* Media Query for smaller screens */
+@media (max-width: 768px) {
+    .boxes {
+        flex-direction: column;
+        align-items: center;
+    }
+
+    .box {
+        width: 80%;
+        margin-bottom: 20px;
+    }
+
+    .image-gallery {
+        flex-direction: column;
+        align-items: center;
+    }
+
+    .image-item {
+        width: 80%;
+        margin-bottom: 20px;
+    }
+}
+footer {
+    background: linear-gradient(145deg, rgba(64, 126, 168, 0.8), rgba(20, 75, 88, 0.7)); /* 2 RGBA colors for gradient */
+    padding: 30px 50px;
+    color: white;
+    text-align: center;
+    position: relative;
+    box-shadow: 10px 10px 15px rgba(0, 0, 0, 0.2), -10px -10px 15px rgba(255, 255, 255, 0.3);
+    border-top-left-radius: 125px;
+    margin-top: auto; /* Make the footer stick to the bottom */
+  }
+  
+  .footer-container {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    max-width: 1200px;
+    margin: 0 auto;
+  }
+  
+  .footer-left, .footer-center, .footer-right {
+    flex: 1;
+  }
+  
+  .footer-left img.footer-logo {
+    max-height: 80px; /* Adjust this value as per your desired logo size */
+    width: auto;
+  }
+  
+  .footer-center p {
+    font-size: 16px;
+    font-style: bold;
+    margin: 0;
+  }
+  
+  .footer-right {
+    text-align: right;
+  }
+  
+  .footer-right p {
+    margin-bottom: 10px;
+  }
+  
+  .social-links {
+    font-size: 14px;
+  }
+  
+  .social-links a {
+    color: white;
+    text-decoration: none;
+    padding: 0 8px;
+  }
+  
+  .social-links a:hover {
+    text-decoration: underline;
+  }
+  
+  /* Responsive adjustments for smaller screens */
+  @media (max-width: 768px) {
+    .footer-container {
+      flex-direction: column;
+      text-align: center;
+    }
+  
+    .footer-left, .footer-center, .footer-right {
+      flex: none;
+      margin-bottom: 15px;
+    }
+  
+    .footer-right {
+      text-align: center;
+    }
+  }
